@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <style>
+        body{
+            width: 100%;
+            height: 500px;
+            
+        }
+        .container {
+            width: 60%;
+            padding-top: 50px;
+            margin: auto;
+            display: grid;
+        }
+        #calculate{
+            width: 100px;
+            border-radius: 25px;
+        }
+        input{
+            width: 200px;
+            height: 50px;
+            font-size: 50px;
+        }
+    </style>
+    <script>
+      class Arithmetic {
+        constructor(input1, input2) {
+          this.input1 = input1;
+          this.input2 = input2;
+        }
+
+        multiply() {
+          return this.input1 * this.input2;
+        }
+
+        divide() {
+          return this.input1 / this.input2;
+        }
+
+        subtract() {
+          return this.input1 - this.input2;
+        }
+
+        add() {
+          return this.input1 + this.input2;
+        }
+      }
+
+      window.onload = function() {
+        const input1 = parseInt(document.getElementById("input1").value);
+        const input2 = parseInt(document.getElementById("input2").value);
+        const arithmetic = new Arithmetic(input1, input2);
+
+        document.getElementById("multiply").innerHTML =
+          "Multiplication: " + arithmetic.multiply();
+        document.getElementById("divide").innerHTML =
+          "Division: " + arithmetic.divide();
+        document.getElementById("subtract").innerHTML =
+          "Subtraction: " + arithmetic.subtract();
+        document.getElementById("add").innerHTML =
+          "Addition: " + arithmetic.add();
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <input type="number" id="input1" /><br>
+      <input type="number" id="input2" /><br>
+      <button onclick="window.onload()" id="calculate">Calculate</button><br>
+      <div id="multiply"></div><br>
+      <div id="divide"></div><br>
+      <div id="subtract"></div><br>
+      <div id="add"></div>
+    </div>
+  </body>
+</html>

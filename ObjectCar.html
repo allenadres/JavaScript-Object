@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Information</title>
+    <style>
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      p {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Vehicle Info</h1>
+      <div id="car-info"></div>
+    </div>
+    <script>
+      const Car = function(Name, YearModel, EngineType, Manufacturer, Brand, CountryOrigin) {
+        this.Name = Name;
+        this.YearModel = YearModel;
+        this.EngineType = EngineType;
+        this.Manufacturer = Manufacturer;
+        this.Brand = Brand;
+        this.CountryOrigin = CountryOrigin;
+      };
+      
+      const car = new Car("Montero Sport-Black Series", 2023, "2.4-liter DOHC turbodiesel engine", "Mitsubishi", "Mitsubishi", "Japan");
+      
+      const carInfoDiv = document.getElementById("car-info");
+      carInfoDiv.innerHTML = 
+        "<p>Name: " + car.Name + "</p>" +
+        "<p>Year Model: " + car.YearModel + "</p>" +
+        "<p>Engine Type: " + car.EngineType + "</p>" +
+        "<p>Manufacturer: " + car.Manufacturer + "</p>" +
+        "<p>Brand: " + car.Brand + "</p>" +
+        "<p>Country of Origin: " + car.CountryOrigin + "</p>";
+    </script>
+  </body>
+</html>

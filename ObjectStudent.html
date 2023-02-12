@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Student Information</h1>
+      <div id="student-info"></div>
+    </div>
+    <script>
+      class Student {
+        constructor(firstName, lastName, address, age, email) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.address = address;
+          this.age = age;
+          this.email = email;
+        }
+      }
+  
+      Student.prototype.nationality = "American";
+      Student.prototype.language = "English";
+  
+      const student = new Student("Mary", "Smith", "BURKHARDT RD. EVANSVILLE.", 29, "mary123@yahoo.com");
+  
+      let studentInfo = `
+        <p>First Name: ${student.firstName}</p>
+        <p>Last Name: ${student.lastName}</p>
+        <p>Address: ${student.address}</p>
+        <p>Age: ${student.age}</p>
+        <p>Email: ${student.email}</p>
+        <p>Nationality: ${student.nationality}</p>
+        <p>Language: ${student.language}</p>
+      `;
+  
+      document.getElementById("student-info").innerHTML = studentInfo;
+    </script>
+  </body>
+</html>
